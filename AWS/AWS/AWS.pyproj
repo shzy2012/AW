@@ -23,6 +23,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AWS.py" />
+    <Compile Include="Motor\Motor.py" />
+    <Compile Include="Motor\Pins.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Motor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Motor\ReadMe.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
