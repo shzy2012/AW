@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7d5d763b-80e1-47ff-8ae2-dd41b259c8bd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>AWS.py</StartupFile>
+    <StartupFile>__init__.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,15 +22,23 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AWS.py" />
+    <Compile Include="__init__.py" />
     <Compile Include="Motor\Motor.py" />
     <Compile Include="Motor\Pins.py" />
+    <Compile Include="Motor\Stepper.py" />
+    <Compile Include="Motor\TestCode.py" />
+    <Compile Include="Tools\all_row.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Motor\" />
+    <Folder Include="C\" />
+    <Folder Include="Reference\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="C\HelloWorld.c" />
     <Content Include="Motor\ReadMe.txt" />
+    <Content Include="Reference\PWM.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
