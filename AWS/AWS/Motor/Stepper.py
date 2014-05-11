@@ -1,7 +1,8 @@
 ###########import
 
 import RPi.GPIO as gpio
-from time import sleep  # pull in the sleep function from time modu
+import time
+import thread
 '''
 # 9 and 24 Enable +
 # 9  10   11
@@ -99,13 +100,18 @@ class Stepper:
         for x in port_list:
             gpio.output(x,False)
         print 'stepper stop now!'
+    def rotate(self, P_time=1):
+        self.left_forward_start()
+        time.sleep(P_time)
+        self.stop()
+
     def pwm(self,pwm_obj,direction):
         self.pwm_stop(direction)
         pwm_obj.start(dc)
         for x in range(0,101,2):
             pwm_obj.ChangeDutyCycle(x)
             #if x > 50 and x < 90:
-            #    sleep(pause_time)
+            #    time.sleep(pause_time)
     def pwm_stop(self,direction):
         if direction == 'left':
             self.pwm_l_f_1A.stop()
@@ -136,8 +142,10 @@ class Stepper:
                             self.right_backward_start()
                     elif n == 'rstop':
                             self.right_stop()
-                    elif n == 'stop':
+                    elif n == 's':
                             self.stop()
+                    elif n == 'r':
+                            self.rotate()
                     else:
                             print 'Not found command ...'
         except KeyboardInterrupt:

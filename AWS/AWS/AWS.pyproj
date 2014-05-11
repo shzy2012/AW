@@ -22,8 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Motor\MotorCycle.py" />
     <Compile Include="__init__.py" />
-    <Compile Include="Motor\Motor.py" />
+    <Compile Include="Motor\MotorBase.py" />
     <Compile Include="Motor\Pins.py" />
     <Compile Include="Motor\Stepper.py" />
     <Compile Include="Motor\TestCode.py" />
